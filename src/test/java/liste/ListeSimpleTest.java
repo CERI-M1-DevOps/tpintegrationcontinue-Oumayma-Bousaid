@@ -73,7 +73,7 @@ class ListeSimpleTest {
         listeATester.modifiePremier(3, 10);
 
         // Assert that the list is unchanged
-        assertEquals("ListeSimple(Noeud(1), Noeud(2))", listeATester.toString());
+        assertEquals("ListeSimple(Noeud(2), Noeud(1))", listeATester.toString());
     }
 
     @Test
