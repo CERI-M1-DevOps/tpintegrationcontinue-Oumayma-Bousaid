@@ -123,7 +123,7 @@ public class ListeSimple {
         Noeud precedentR1;
         Noeud precedentR2;
 
-        if (r1 != tete) {
+        if (r1 != tete & r2 != tete) {
             precedentR1 = getPrecedent(r1);
             precedentR2 = getPrecedent(r2);
             precedentR1.setSuivant(r2);
