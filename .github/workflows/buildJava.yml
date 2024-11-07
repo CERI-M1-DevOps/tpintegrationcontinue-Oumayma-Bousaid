@@ -22,7 +22,7 @@ jobs:
           distribution: 'corretto'
           java-version: '21'
 
-      # Étape 3 : Construire et tester le package avec Maven
+      # Étape 3 : Analyse de la qualité avec Maven
       - name: Analyse du qualiter
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
