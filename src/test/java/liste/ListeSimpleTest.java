@@ -297,4 +297,30 @@ class ListeSimpleTest {
         System.out.println(listeATester);
         assertEquals("ListeSimple(Noeud(4), Noeud(2), Noeud(3), Noeud(1), Noeud(5))", listeATester.toString());
     }
+    @Test
+    void testSupprimePremierElementNotFound() {
+        // Setup list
+        listeATester.ajout(1);
+        listeATester.ajout(2);
+
+        // Essayer de supprimer un élément qui n'existe pas (élément 3)
+        listeATester.supprimePremier(3);
+
+        // Vérifier que la liste reste inchangée
+        assertEquals("ListeSimple(Noeud(2), Noeud(1))", listeATester.toString());
+    }
+
+    @Test
+    void testSupprimePremierEmptyList() {
+        // Setup empty list
+        listeATester = new ListeSimple();
+
+        // Essayer de supprimer un élément d'une liste vide
+        listeATester.supprimePremier(1);
+
+        // Vérifier que la liste est toujours vide
+        assertNull(listeATester.tete);
+    }
+
+
 }
