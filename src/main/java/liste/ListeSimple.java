@@ -13,6 +13,14 @@ public class ListeSimple {
         size++;
     }
 
+    /**
+     * Modifie la première occurrence d'un élément dans la liste.
+     * Si l'élément est trouvé, il est remplacé par la nouvelle valeur.
+     *
+     * @param element l'élément à rechercher dans la liste
+     * @param nouvelleValeur la nouvelle valeur à remplacer
+     */
+
     public void modifiePremier(Object element, Object nouvelleValeur) {
         Noeud courant = tete;
         while (courant != null && courant.getElement() != element)
@@ -20,7 +28,13 @@ public class ListeSimple {
         if (courant != null)
             courant.setElement(nouvelleValeur);
     }
-
+    /**
+     * Modifie toutes les occurrences d'un élément dans la liste.
+     * Remplace chaque occurrence de l'élément par la nouvelle valeur.
+     *
+     * @param element l'élément à rechercher et remplacer dans la liste
+     * @param nouvelleValeur la nouvelle valeur à attribuer
+     */
     public void modifieTous(Object element, Object nouvelleValeur) {
         Noeud courant = tete;
         while (courant != null) {
@@ -29,7 +43,12 @@ public class ListeSimple {
             courant = courant.getSuivant();
         }
     }
-
+    /**
+     * Représente la liste sous forme de chaîne de caractères.
+     * Affiche chaque élément de la liste, séparé par des virgules.
+     *
+     * @return une chaîne représentant la liste
+     */
     public String toString() {
         StringBuilder sb = new StringBuilder("ListeSimple(");
         Noeud n = tete;
@@ -42,7 +61,12 @@ public class ListeSimple {
         sb.append(")");
         return sb.toString();
     }
-
+    /**
+     * Supprime la première occurrence d'un élément dans la liste.
+     * Si l'élément est trouvé, il est retiré et la taille de la liste est décrémentée.
+     *
+     * @param element l'élément à supprimer de la liste
+     */
     public void supprimePremier(Object element) {
         if (tete != null) {
             if (tete.getElement() == element) {
@@ -62,10 +86,24 @@ public class ListeSimple {
             }
         }
     }
-
+    /**
+     * Supprime toutes les occurrences d'un élément dans la liste.
+     * Utilise une méthode récursive pour parcourir et modifier la liste.
+     *
+     * @param element l'élément à supprimer de la liste
+     */
     public void supprimeTous(int element) {
        tete = supprimeTousRecurs(element, tete);
     }
+
+
+    /**
+     * Méthode récursive pour supprimer toutes les occurrences d'un élément dans la liste.
+     *
+     * @param element l'élément à supprimer de la liste
+     * @param tete le nœud courant à partir duquel rechercher
+     * @return le nœud suivant ou la tête de la liste modifiée
+     */
 
     public Noeud supprimeTousRecurs(Object element, Noeud tete) {
         if (tete != null) {
@@ -79,7 +117,12 @@ public class ListeSimple {
             }
         } else return null;
     }
-
+    /**
+     * Récupère l'avant-dernier élément de la liste.
+     * Si la liste a moins de deux éléments, retourne null.
+     *
+     * @return le nœud avant le dernier ou null si la liste est trop courte
+     */
     public Noeud getAvantDernier() {
         if (tete == null || tete.getSuivant() == null)
             return null;
