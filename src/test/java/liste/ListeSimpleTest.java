@@ -64,8 +64,8 @@ class ListeSimpleTest {
         assertEquals(4, listeATester.tete.getSuivant().getElement());
     }
     @Test
-    void testModifiePremierElementNotFound() {
-        // Setup list
+    void testModifiePremierElementNotFound()
+
         listeATester.ajout(1);
         listeATester.ajout(2);
 
