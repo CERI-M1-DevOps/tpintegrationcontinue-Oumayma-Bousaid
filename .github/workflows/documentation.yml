@@ -3,8 +3,8 @@ name: Generate Documentation
 on:
   pull_request:
     types: [closed]
-permission:
-     content: write
+permissions:
+     contents: write
 
 jobs:
   generate-doc:
